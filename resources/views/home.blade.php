@@ -17,6 +17,7 @@
           <div class="masthead clearfix">
             <div class="inner">
               <h3 class="masthead-brand">Welcome, {!!  Auth::user()->name !!}</h3>
+              {{-- <h3 class="masthead-brand">Welcome, User</h3> --}}
               <nav>
                 <ul class="nav masthead-nav">
                   <li class="active"><a href="#">Home</a></li>

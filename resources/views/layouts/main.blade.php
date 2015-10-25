@@ -4,9 +4,9 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Stuffhubb | @yield('title')</title>
+		<title>Stuffhubb Frontend | @yield('title')</title>
 
-      <link rel="stylesheet" href="/css/normalize.css">
+      <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
       <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
       <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
 
@@ -32,7 +32,6 @@
                   @else
                      <a class="navbar-brand" href="/">Stuffhubb</a>
                   @endif
-               
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                <form class="navbar-form navbar-left">
@@ -53,9 +52,12 @@
                      <span class="caret"></span></a>
                      <ul class="dropdown-menu">
                        @if (Auth::check())
-                        <li>{!! link_to_route('user.products.index', "List", [Auth::user()->id] ) !!}</li>
-                        <li>{!! link_to_route('search.index', "Rent") !!}</li>
-                        <li>{!! link_to_route('user.show', "Dashboard", [Auth::user()->id] ) !!}</li>
+                        {{-- <li>{!! link_to_route('user.products.index', "List", [Auth::user()->id] ) !!}</li> --}}
+                        {{-- <li>{!! link_to_route('search.index', "Rent") !!}</li> --}}
+                        {{-- <li>{!! link_to_route('user.show', "Dashboard", [Auth::user()->id] ) !!}</li> --}}
+                        <li><a href="{{url('/products/index')}}"> <i class="fa fa-sign-out"></i> List</a></li>
+                        <li><a href="{{url('/search/index')}}"> <i class="fa fa-sign-out"></i> Rent</a></li>
+                        <li><a href="{{url('/user/dashboard')}}"> <i class="fa fa-sign-out"></i> Dashboard</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="{{url('/auth/logout')}}"> <i class="fa fa-sign-out"></i> Sign Out</a></li>
                        @else
